@@ -11,7 +11,7 @@ docker run --name=bitcoind-data -v /home/bitcoin/.bitcoin busybox chown 1000:100
 then you can run it with:
 
 ```
-docker run -e "rpcpassword=secretpassword" --name=bitcoind --volumes-from bitcoind-data -d -p 8332:8332 -p 8333:8333 bitcoind
+docker run -e "rpcpassword=secretpassword" --name=bitcoind --volumes-from bitcoind-data -d -p 8332:8332 -p 8333:8333 dianmao/bitcoind
 ```
 
 and then it can started with the supplied ```bitcoinxt.service```.
