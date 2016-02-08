@@ -1,6 +1,6 @@
 # bitcoind
 
-This is a Bitcoin XT full node.
+This is a Bitcoin Classic full node.
 
 # Running
 
@@ -27,15 +27,7 @@ docker run -e "rpcpassword=secretpassword" --name=bitcoind --volumes-from bitcoi
 
 # Starting/stopping
 
-The container can be stopped/started with ```docker stop bitcoind```, ```docker start bitcoind``` or with the supplied ```bitcoinxt.service``` if using systemd.
-
-# Changelog
-
-When upgrading the container from Bitcoin XT:0.11.0A to Bitcoin XT:0.11.0B you must change the rights in the **bitcoind-data** container with:
-
-```
-chown -R 103:106 `docker inspect bitcoind-data|grep _data|cut -d'"' -f4`
-```
+The container can be stopped/started with ```docker stop bitcoind```, ```docker start bitcoind``` or with the supplied ```bitcoin.service``` if using systemd.
 
 # Contact & Misc
 **e-mail:** stone at midway dot hu
