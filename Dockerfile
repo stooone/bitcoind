@@ -11,8 +11,8 @@ FROM ubuntu:14.04
 
 RUN apt-get update && apt-get install -y wget
 
-RUN wget https://github.com/bitcoinclassic/bitcoinclassic/releases/download/v0.11.2.cl1/bitcoin-0.11.2-linux64.tar.gz
-RUN tar -xzf bitcoin-0.11.2-linux64.tar.gz
+RUN wget https://github.com/bitcoinclassic/bitcoinclassic/releases/download/v0.12.0clrc1/bitcoin-0.12.0clrc1-linux64.tar.gz
+RUN tar -xzf bitcoin-0.12.0clrc1-linux64.tar.gz
 
 RUN groupadd -g 106 bitcoin && useradd -s /bin/false -u 103 -g 106 -d /home/bitcoin bitcoin
 USER bitcoin
@@ -24,5 +24,5 @@ ENV HOME /home/bitcoin
 
 CMD echo > /home/bitcoin/.bitcoin/debug.log && \
     echo "rpcallowip=$(ip r|grep '/'|cut -d' ' -f1)\nrpcuser=bitcoinrpc\nrpcpassword=${rpcpassword}\ndaemon=1\ntxindex=1\n" > /home/bitcoin/.bitcoin/bitcoin.conf && \
-    /bitcoin-0.11.2/bin/bitcoind && \
+    /bitcoin-0.12.0/bin/bitcoind && \
     tail -f /home/bitcoin/.bitcoin/debug.log
