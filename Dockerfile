@@ -11,8 +11,8 @@ FROM ubuntu:14.04
 
 RUN apt-get update && apt-get install -y wget
 
-RUN wget https://github.com/bitcoinclassic/bitcoinclassic/releases/download/v0.12.0clrc1/bitcoin-0.12.0clrc1-linux64.tar.gz
-RUN tar -xzf bitcoin-0.12.0clrc1-linux64.tar.gz
+RUN wget https://github.com/bitcoinclassic/bitcoinclassic/releases/download/v0.12.0cl1/bitcoin-0.12.0-linux64.tar.gz
+RUN tar -xzf bitcoin-0.12.0-linux64.tar.gz
 
 RUN groupadd -g 106 bitcoin && useradd -s /bin/false -u 103 -g 106 -d /home/bitcoin bitcoin
 USER bitcoin
